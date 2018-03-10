@@ -9,7 +9,7 @@ var app = express();
 app.use(require("cookie-parser")());
 
 //Take user to twitter login page
-app.get("auth/twitter", authenticator.redirectToTwitterLoginPage);
+app.get("/auth/twitter", authenticator.redirectToTwitterLoginPage);
 
 // The callback url that the user is redirected to after signing in
 app.get(url.parse(config.oauth_callback).path, function(req, res) {
